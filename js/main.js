@@ -1,20 +1,3 @@
-const searchEl = document.querySelector('.search');
-const searchInputEl = searchEl.querySelector('input');
-
-searchEl.addEventListener('click', function(){
-  searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus', function(){
-  searchEl.classList.add('focused');
-  searchInputEl.setAttribute('placeholder', '통합검색');
-});
-
-searchInputEl.addEventListener('blur', function(){
-  searchEl.classList.remove('focused');
-  searchInputEl.setAttribute('placeholder', '');
-});
-
 
 const badgeEl = document.querySelector('header .badges');
 const toTopEl = document.querySelector('#to-top');
@@ -39,7 +22,7 @@ window.addEventListener('scroll', _.throttle(function(){
       display : 'block'
     });
     //버튼 숨기기
-    gsap.to(toTopEl, .2, {
+    gsap.to(totop, .2, {
       x: 100
     })
   }
@@ -149,5 +132,3 @@ spyEls.forEach(function(spyEl){
     .addTo(new ScrollMagic.Controller());
 });
 
-const  thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear(); //2021
